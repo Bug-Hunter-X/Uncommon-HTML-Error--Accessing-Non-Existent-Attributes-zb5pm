@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv" data-my-attribute="test"></div>
+
+  <script>
+    let element = document.getElementById("myDiv");
+
+    // Check for the attribute's existence before accessing it
+    if (element.hasAttribute("data-my-attribute")) {
+      let attributeValue = element.getAttribute("data-my-attribute");
+      console.log(attributeValue); // Outputs "test"
+    } else {
+      console.log("Attribute does not exist");
+    }
+
+
+    // demonstrates how to safely get a numeric value
+    let numericAttribute = element.getAttribute("data-numeric");
+    let safeNumericValue = parseInt(numericAttribute) || 0; // default 0 if not a number
+    console.log(safeNumericValue)
+  </script>
+</body>
+</html>
